@@ -34,6 +34,16 @@ const isDescendant = (parent: HTMLElement, child: HTMLElement) => {
   return false;
 }
 
+const isException = (str: string) => {
+  const exception = [
+    "お", "し", "へ", "ん"
+  ]
+  if (exception.find((item) => item === str)) {
+    return true;
+  }
+  return false;
+}
+
 export default (props: Props) => {
 
   const [value, setValue] = useState(props.value);
@@ -55,9 +65,13 @@ export default (props: Props) => {
         {hiragana.map((item) => {
           return (<li className="hiragana-picker__item">
             {item.map((child) => {
+              if (!child) {
+                return <span className="hiragana-picker__list-dummy"></span>
+              }
               return (<button
                 className="hiragana-picker__list-btn"
                 type="button"
+                disabled={isException(child)}
                 onClick={() => {
                   setValue(child);
                   props.onChange(child);

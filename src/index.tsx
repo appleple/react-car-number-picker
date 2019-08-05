@@ -82,12 +82,16 @@ export default (props: Props) => {
           setStep(1);
         }, 10);
       }}
+      onClose={() => {
+        setStep(-1);
+      }}
       onChange={(number1) => {
-        setNumbers({
+        const newNumbers = {
           ...numbers,
           number1
-        });
-        props.onChange(composeValue(hiragana, numbers));
+        }
+        setNumbers(newNumbers);
+        props.onChange(composeValue(hiragana, newNumbers));
         setTimeout(() => {
           setStep(2);
         }, 10);
@@ -99,12 +103,16 @@ export default (props: Props) => {
       onOpen={() => {
         setStep(2);
       }}
+      onClose={() => {
+        setStep(-1);
+      }}
       onChange={(number2) => {
-        setNumbers({
+        const newNumbers = {
           ...numbers,
           number2
-        });
-        props.onChange(composeValue(hiragana, numbers));
+        }
+        setNumbers(newNumbers);
+        props.onChange(composeValue(hiragana, newNumbers));
         setTimeout(() => {
           setStep(3);
         }, 10);
@@ -117,12 +125,16 @@ export default (props: Props) => {
       onOpen={() => {
         setStep(3);
       }}
+      onClose={() => {
+        setStep(-1);
+      }}
       onChange={(number3) => {
-        setNumbers({
+        const newNumbers = {
           ...numbers,
           number3
-        });
-        props.onChange(composeValue(hiragana, numbers));
+        }
+        setNumbers(newNumbers);
+        props.onChange(composeValue(hiragana, newNumbers));
         setTimeout(() => {
           setStep(4);
         }, 10);
@@ -134,12 +146,16 @@ export default (props: Props) => {
       onOpen={() => {
         setStep(4);
       }}
+      onClose={() => {
+        setStep(-1);
+      }}
       onChange={(number4) => {
-        setNumbers({
+        const newNumbers = {
           ...numbers,
           number4
-        });
-        props.onChange(composeValue(hiragana, numbers));
+        }
+        setNumbers(newNumbers);
+        props.onChange(composeValue(hiragana, newNumbers));
         setTimeout(() => {
           setStep(-1);
         }, 10);

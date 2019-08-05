@@ -4,15 +4,23 @@ import CarNumberPicker from './src';
 
 import './css/index.css';
 
-const value = "あ1234"
+const Demo = () => {
 
-render(
-  <CarNumberPicker 
-    value="あ1234" 
-    onChange={(value) => {
-      console.log(value);
-    }} 
-  />
-  , 
+  const [value, setValue] = React.useState("あ1234");
+
+  return (<>
+    <div style={{marginBottom: '10px'}}>
+      <input type="text" value={value} readOnly />
+    </div>
+    <CarNumberPicker 
+      value={value} 
+      onChange={(value) => {
+        setValue(value)
+      }} 
+    />
+  </>)
+}
+
+render(<Demo/>, 
   document.getElementById('app')
 );

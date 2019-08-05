@@ -1,19 +1,21 @@
 import * as React from 'react';
+import ArrowIcon from './icon';
 
 type Props = {
   value: string
   onChange(value: string): void
   onOpen(): void
+  onClose?(): void
   open?: boolean
 }
 
 const { useState } = React;
 
 const values = [
-  ['0', '1', '2'],
-  ['3', '4', '5'],
-  ['6', '7', '8'],
-  ['9', '.']
+  ['1', '2', '3'],
+  ['4', '5', '6'],
+  ['7', '8', '9'],
+  ['0', '.', '*']
 ]
 
 export default (props: Props) => {
@@ -34,11 +36,15 @@ export default (props: Props) => {
           return (<li className="number-picker__item">{item.map((val) => {
             return (<button 
               onClick={(e) => {
-                setValue(val);
-                props.onChange(val);
+                if (val === '*' && props.onClose) {
+                  props.onClose()
+                } else {
+                  setValue(val);
+                  props.onChange(val);
+                }
               }}
-              className="number-picker__btn"
-            >{val}</button>)
+              className="number-picker__list-btn"
+            >{val !== "*" ? val : (<ArrowIcon />)}</button>)
           })
         }</li>)})}
       </ul>

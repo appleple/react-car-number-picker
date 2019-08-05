@@ -3,6 +3,10 @@
   display: inline-block;
 }
 
+.hiragana-picker__item {
+  padding: 2px;
+}
+
 .hiragana-picker__btn {
   border-radius: 50%;
   width: 40px;
@@ -32,7 +36,12 @@
 .hiragana-picker__list-wrap {
   position: absolute;
   top: 55px;
-  left: 0;
+  left: -15px;
+  padding: 18px 18px 14px 18px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  background-color: #F3F4F7;
+  z-index: 1;
 }
 
 .hiragana-picker__list-wrap::after {
@@ -42,10 +51,10 @@
   height: 0;
   border-style: solid;
   border-width: 0 7.5px 10px 7.5px;
-  border-color: transparent transparent #FFF transparent;
+  border-color: transparent transparent #F3F4F7 transparent;
   position: absolute;
-  top: -9px;
-  left: 12px;
+  top: -10px;
+  left: 27px;
   z-index: 0;
 }
 
@@ -55,11 +64,11 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 8.5px 12px 8.5px;
+  border-width: 0 8.5px 10px 8.5px;
   border-color: transparent transparent #999 transparent;
   position: absolute;
   top: -10px;
-  left: 11px;
+  left: 26px;
   z-index: 0;
 }
 
@@ -85,6 +94,22 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
+  margin-bottom: 4px;
+  border-radius: 3px;
+  border: none;
+}
+
+.hiragana-picker__list-btn:disabled {
+  background-color: #E5E5E5;
+  color: #333333;
+}
+
+.hiragana-picker__list-dummy {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-bottom: 4px;
 }
 
 .car-number-picker {
@@ -97,6 +122,7 @@
   display: inline-block;
   padding: 10px;
   color: #999;
+  margin-right: 5px;
 }
 
 .number-picker {
@@ -105,9 +131,13 @@
 
 .number-picker__list-wrap {
   position: absolute;
-  top: 50px;
-  left: 0;
+  top: 70px;
+  left: -15px;
   border: 1px solid #999;
+  padding: 20px 18px 18px 20px;
+  z-index: 1;
+  background-color: #F3F4F7;
+  border-radius: 3px;
 }
 
 .number-picker__list-wrap::after {
@@ -117,10 +147,10 @@
   height: 0;
   border-style: solid;
   border-width: 0 7.5px 10px 7.5px;
-  border-color: transparent transparent #FFF transparent;
+  border-color: transparent transparent #F3F4F7 transparent;
   position: absolute;
-  top: -9px;
-  left: 12px;
+  top: -10px;
+  left: 27px;
   z-index: 0;
 }
 
@@ -130,18 +160,17 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 8.5px 12px 8.5px;
+  border-width: 0 8.5px 10px 8.5px;
   border-color: transparent transparent #999 transparent;
   position: absolute;
   top: -10px;
-  left: 11px;
+  left: 26px;
   z-index: 0;
 }
 
 .number-picker__list {
   padding: 0;
   margin: 0;
-  background-color: #FFF;
   display: flex;
   flex-direction: column;
   list-style-type: none;
@@ -156,9 +185,36 @@
 
 .number-picker__btn {
   width: 40px;
-  height: 40px;
+  height: 72px;
   appearance: none;
   -webkit-appearance: none;
   background-color: #FFF;
+  border: none;
   color: #999;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.number-picker__list-btn {
+  background-color: #FFF;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  border-radius: 3px;
+  border: none;
+  margin-right: 4px;
+}
+
+.number-picker__enter-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #555555;
 }
