@@ -1,6 +1,6 @@
 {
   "name": "react-car-number-picker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hiragana Picker for React",
   "main": "lib/src/index.js",
   "type": "lib/src/index.d.ts",
