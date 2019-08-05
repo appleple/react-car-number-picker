@@ -9,12 +9,12 @@
 ```js
 import { render } from 'react-dom'
 import * as React from 'react';
-import HiraganaPicker from 'react-hiragana-picker';
+import CarNumberPicker from 'react-car-number-picker';
 import 'react-hiragana-picker/css/index.css';
 
 render(
-  <HiraganaPicker 
-    value="あ" 
+  <CarNumberPicker 
+    value="あ1234" 
     onChange={(value) => {
       console.log(value);
     }} 
