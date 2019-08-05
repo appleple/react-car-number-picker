@@ -1,4 +1,4 @@
-# React Hiragana Picker
+# react-car-number-picker
 
 ## ScreenShot
 
@@ -10,7 +10,7 @@
 import { render } from 'react-dom'
 import * as React from 'react';
 import CarNumberPicker from 'react-car-number-picker';
-import 'react-hiragana-picker/css/index.css';
+import 'react-car-number-picker/css/index.css';
 
 render(
   <CarNumberPicker 
