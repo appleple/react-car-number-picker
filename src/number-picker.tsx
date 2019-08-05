@@ -27,7 +27,7 @@ export default (props: Props) => {
   const [value, setValue] = useState(prop.value);
 
   return (<div className="number-picker">
-    <button className="number-picker__btn" onClick={() => {
+    <button type="button" className="number-picker__btn" onClick={() => {
       prop.onOpen();
     }}>{value}</button>
     {prop.open && <div className="number-picker__list-wrap">
@@ -35,6 +35,7 @@ export default (props: Props) => {
         {values.map((item) => {
           return (<li className="number-picker__item">{item.map((val) => {
             return (<button 
+              type="button"
               onClick={(e) => {
                 if (val === '*' && props.onClose) {
                   props.onClose()
