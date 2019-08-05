@@ -1,5 +1,5 @@
 import * as React from 'react';
-import HiraganaPicker from 'react-hiragana-picker';
+import HiraganaPicker from './hiragana-picker';
 import NumberPicker from './number-picker';
 
 type Props = {
@@ -45,7 +45,7 @@ export default (props: Props) => {
     number3,
     number4
   });
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(-1);
   const picker = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const listener: EventListener = (e) => {
@@ -59,20 +59,28 @@ export default (props: Props) => {
     }
   });
 
-  return (<div className="car-number-picker" >
+  return (<div className="car-number-picker" ref={picker}>
     <HiraganaPicker 
+      onOpen={() => {
+        setStep(0)
+      }}
+      open={step === 0}
       value={hiragana}
       onChange={(nextHiragana) => {
         setHiragana(nextHiragana);
         props.onChange(composeValue(nextHiragana, numbers));
-        setStep(1);
+        setTimeout(() => {
+          setStep(1);
+        }, 10);
       }}
     />
     <NumberPicker 
       value={numbers.number1} 
       open={step === 1}
       onOpen={() => {
-        setStep(1);
+        setTimeout(() => {
+          setStep(1);
+        }, 10);
       }}
       onChange={(number1) => {
         setNumbers({
@@ -80,7 +88,9 @@ export default (props: Props) => {
           number1
         });
         props.onChange(composeValue(hiragana, numbers));
-        setStep(2);
+        setTimeout(() => {
+          setStep(2);
+        }, 10);
       }}
     />
     <NumberPicker 
@@ -95,7 +105,9 @@ export default (props: Props) => {
           number2
         });
         props.onChange(composeValue(hiragana, numbers));
-        setStep(3);
+        setTimeout(() => {
+          setStep(3);
+        }, 10);
       }}
     />
     <span className="car-number-span">-</span>
@@ -111,7 +123,9 @@ export default (props: Props) => {
           number3
         });
         props.onChange(composeValue(hiragana, numbers));
-        setStep(4);
+        setTimeout(() => {
+          setStep(4);
+        }, 10);
       }}
     />
     <NumberPicker 
@@ -126,7 +140,9 @@ export default (props: Props) => {
           number4
         });
         props.onChange(composeValue(hiragana, numbers));
-        setStep(5);
+        setTimeout(() => {
+          setStep(-1);
+        }, 10);
       }}
     />
   </div>)
