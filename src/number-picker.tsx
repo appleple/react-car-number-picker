@@ -27,7 +27,7 @@ export default (props: Props) => {
   const [value, setValue] = useState(prop.value);
 
   return (<div className="number-picker">
-    <button type="button" className="number-picker__btn" onClick={() => {
+    <button type="button" className={`number-picker__btn${prop.open ? ' number-picker__btn-open' : ''}`} onClick={() => {
       prop.onOpen();
     }}>{value}</button>
     {prop.open && <div className="number-picker__list-wrap">

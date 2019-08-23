@@ -59,7 +59,7 @@ export default (props: Props) => {
     }
   });
 
-  return (<div className="car-number-picker" ref={picker}>
+  return (<div className={`car-number-picker car-number-step${step}`} ref={picker}>
     <HiraganaPicker 
       onOpen={() => {
         setStep(0)
@@ -118,7 +118,6 @@ export default (props: Props) => {
         }, 10);
       }}
     />
-    <span className="car-number-span">-</span>
     <NumberPicker 
       value={numbers.number3} 
       open={step === 3}

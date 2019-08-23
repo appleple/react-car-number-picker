@@ -115,6 +115,7 @@
 .car-number-picker {
   display: inline-flex;
   align-items: center;
+  position: relative;
 }
 
 .car-number-span {
@@ -124,14 +125,10 @@
   margin-right: 5px;
 }
 
-.number-picker {
-  position: relative;
-}
-
 .number-picker__list-wrap {
   position: absolute;
-  top: 70px;
-  left: -15px;
+  top: 80px;
+  left: 35px;
   border: 1px solid #999;
   padding: 20px 18px 18px 20px;
   z-index: 1;
@@ -167,6 +164,31 @@
   z-index: 0;
 }
 
+.car-number-step2 .number-picker__list-wrap::before {
+  left: 70px;
+}
+
+.car-number-step2 .number-picker__list-wrap::after {
+  left: 71px;
+}
+
+.car-number-step3 .number-picker__list-wrap::before {
+  left: 115px;
+}
+
+.car-number-step3 .number-picker__list-wrap::after {
+  left: 116px;
+}
+
+.car-number-step4 .number-picker__list-wrap::before {
+  left: 155px;
+}
+
+.car-number-step4 .number-picker__list-wrap::after {
+  left: 156px;
+}
+
+
 .number-picker__list {
   padding: 0;
   margin: 0;
@@ -194,6 +216,11 @@
   margin-right: 5px;
   border-radius: 3px;
   font-weight: bold;
+  transition: background-color .3s;
+}
+
+.number-picker__btn-open {
+  background-color: #EEE;
 }
 
 .number-picker__list-btn {
