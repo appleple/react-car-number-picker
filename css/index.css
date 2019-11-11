@@ -118,6 +118,11 @@
   position: relative;
 }
 
+.number-picker__list-btn:disabled {
+  background-color: #E5E5E5;
+  color: #333333;
+}
+
 .car-number-span {
   display: inline-block;
   padding: 10px;

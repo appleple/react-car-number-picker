@@ -85,6 +85,7 @@ export default (props: Props) => {
       onClose={() => {
         setStep(-1);
       }}
+      disableds={['0']}
       onChange={(number1) => {
         const newNumbers = {
           ...numbers,
@@ -99,6 +100,7 @@ export default (props: Props) => {
     />
     <NumberPicker 
       value={numbers.number2} 
+      disableds={numbers.number1 === '.' ? ['0'] : ['.']}
       open={step === 2}
       onOpen={() => {
         setStep(2);
@@ -120,6 +122,7 @@ export default (props: Props) => {
     />
     <NumberPicker 
       value={numbers.number3} 
+      disableds={numbers.number2 === '.' ? ['0'] : ['.']}
       open={step === 3}
       onOpen={() => {
         setStep(3);
@@ -141,6 +144,7 @@ export default (props: Props) => {
     />
     <NumberPicker 
       value={numbers.number4} 
+      disableds={numbers.number3 === '.' ? ['0', '.'] : ['.']}
       open={step === 4}
       onOpen={() => {
         setStep(4);
