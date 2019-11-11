@@ -11,7 +11,7 @@
     "build:lib": "rm -rf ./lib && tsc",
     "np": "np --no-cleanup",
     "lint": "eslint ./src/** --fix --ext .ts,.tsx",
-    "deploy": "npm-run-all -s build build:lib np --note-test",
+    "deploy": "npm-run-all -s build build:lib np --no-test",
     "build:svg": "npx @svgr/cli -d ./src/components/icons ./assets/images/icons --template ./tools/template.js --ext tsx --no-svgo"
   },
   "repository": {
